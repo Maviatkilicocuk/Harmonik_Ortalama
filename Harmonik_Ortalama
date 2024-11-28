@@ -1,0 +1,41 @@
+package Diziler;
+
+import java.util.Scanner;
+
+public class Harmonik_Ortalama {
+    public static void main(String[] args) {
+
+        int size,n;
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Lütfen dizinin boyutunu giriniz : ");
+        size = input.nextInt();
+
+        int [] list = new int [size];
+
+        System.out.println("Dizinin elemanını giriniz : ");
+        for(int i = 0 ; i<size;i++){
+            System.out.print(i+ ". Elemanı = ");
+            list [i] = input.nextInt();
+        }
+
+        System.out.print("Oluşturduğunuz dizi = [");
+
+        for (int i = 0; i<size ; i++){
+            System.out.print(list[i]);
+            if (i < size - 1) {
+                System.out.print(", ");
+            }
+        }System.out.println("]");
+
+        double harmTop = 0.0;
+        for (int i = 0; i<size; i++){
+            harmTop += 1.0 / list[i];
+        }
+        double harmOrt = size / harmTop;
+
+        System.out.print("Harmonik ortalama = " + harmOrt);
+    }
+
+
+}
